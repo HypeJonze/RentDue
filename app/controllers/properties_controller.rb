@@ -4,7 +4,10 @@ class PropertiesController < ApplicationController
   # GET /properties
   # GET /properties.json
   def index
-    @properties = Property.all
+
+    @user =User.find(params[:user_id])
+    @properties = @user.properties
+    
   end
 
   # GET /properties/1
