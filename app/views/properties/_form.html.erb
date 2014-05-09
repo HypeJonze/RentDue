@@ -1,4 +1,4 @@
-<%= form_for(@property) do |f| %>
+<%= form_for([@user  ,@property]) do |f| %>
   <% if @property.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@property.errors.count, "error") %> prohibited this property from being saved:</h2>
@@ -10,6 +10,12 @@
       </ul>
     </div>
   <% end %>
+<div><%= f.label :Address %><br />
+  <%= f.text_field :address, autofocus: true %></div>
+  
+  <div><%= f.label :Province%><br />
+  <%= f.text_field :province %></div>
+
 
   <div class="actions">
     <%= f.submit %>

@@ -17,7 +17,8 @@ class PropertiesController < ApplicationController
 
   # GET /properties/new
   def new
-    @property = Property.new
+    @user =User.find(params[:user_id])
+    @property = @user.properties.new
   end
 
   # GET /properties/1/edit
@@ -27,17 +28,17 @@ class PropertiesController < ApplicationController
   # POST /properties
   # POST /properties.json
   def create
-    @property = Property.new(property_params)
+    # @property = Property.new(property_params)
 
-    respond_to do |format|
-      if @property.save
-        format.html { redirect_to @property, notice: 'Property was successfully created.' }
-        format.json { render :show, status: :created, location: @property }
-      else
-        format.html { render :new }
-        format.json { render json: @property.errors, status: :unprocessable_entity }
-      end
-    end
+    # respond_to do |format|
+    #   if @property.save
+    #     format.html { redirect_to @property, notice: 'Property was successfully created.' }
+    #     format.json { render :show, status: :created, location: @property }
+    #   else
+    #     format.html { render :new }
+    #     format.json { render json: @property.errors, status: :unprocessable_entity }
+    #   end
+    # end
   end
 
   # PATCH/PUT /properties/1
