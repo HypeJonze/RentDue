@@ -11,10 +11,25 @@
     </div>
   <% end %>
 <div><%= f.label :Address %><br />
-  <%= f.text_field :address, autofocus: true %></div>
+  <%= f.text_field :address, autofocus: true %>
+</div>
   
-  <div><%= f.label :Province%><br />
-  <%= f.text_field :province %></div>
+<div><%= f.label :Province%><br />
+  <%= f.text_field :province %>
+</div>
+
+  <div><%=f.label :City %><br/>
+    <%=f.text_field :city %>
+  </div>
+    <div><%=f.label :Postcode %><br/>
+    <%=f.text_field :postcode %>
+  </div>
+    <div><%=f.label :Rent %><br/>
+    <%=f.number_field :rent %>
+  </div>
+    <div><%=f.label :Utilies %><br/>
+    <%=f.number_field :utilies %>
+  </div>
 
 
   <div class="actions">
