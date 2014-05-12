@@ -13,15 +13,36 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav">
+<<<<<<< HEAD
                     <li><a href="#services">Services</a>
+=======
+                    <li><%= link_to "Property", properties_path %>
+>>>>>>> fa94b92d41e9162e515443634004964704dd7831
                     </li>
                     <li><a href="#contact">Contact</a>
                     </li>
                 </ul>
 
+<<<<<<< HEAD
                
+=======
+                <ul class="nav navbar-nav pull-right">
+                <% if user_signed_in? %>
+                    <li><%= link_to current_user.email, edit_user_registration_path %></li>
+                    <li><%= link_to "Sign Out", destroy_user_session_path, :method => :delete %></li>
+                    <% else %>
+                    <li><%= link_to "Sign In", new_user_session_path %></li>
+                    <li><%= link_to "Sign Up", new_user_registration_path %></li>
+                    <% end %>
+                </ul>
+>>>>>>> fa94b92d41e9162e515443634004964704dd7831
             </div>
             <!-- /.navbar-collapse -->
         </div>
         <!-- /.container -->
+<<<<<<< HEAD
     </nav>
+=======
+    </nav>
+
+>>>>>>> fa94b92d41e9162e515443634004964704dd7831
