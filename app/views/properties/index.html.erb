@@ -11,9 +11,16 @@
   <tbody>
     <% @properties.each do |property| %>
       <tr>
-        <td><%=property.city %></td>
+        <td><%=property.address %></td>
         <td><%=property.province%></td>
+        <td><%=property.city%></td>
+        <td><%=property.postcode %></td>
+        <td><%=property.rent%></td>
+        <td><%=property.utilies%></td>
+        <td><%=link_to "Show Property",user_property_path(@user,property)%></td>
+        <td><%= link_to "Edit Property", edit_user_property_path(@user,property)%></td>
       </tr>
+
     <% end %>
   </tbody>
 </table>
