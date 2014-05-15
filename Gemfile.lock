@@ -40,9 +40,13 @@ GEM
       tzinfo (~> 1.1)
     arel (5.0.1.20140414130214)
     bcrypt (3.1.7)
+    better_errors (1.1.0)
+      coderay (>= 1.0.0)
+      erubis (>= 2.6.6)
     bootstrap-sass (3.1.1.1)
       sass (~> 3.2)
     builder (3.2.2)
+    coderay (1.1.0)
     coffee-rails (4.0.1)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0, < 5.0)
@@ -80,6 +84,8 @@ GEM
       mini_portile (= 0.6.0)
     orm_adapter (0.5.0)
     polyglot (0.3.4)
+    quiet_assets (1.0.2)
+      railties (>= 3.1, < 5.0)
     rack (1.5.2)
     rack-test (0.6.2)
       rack (>= 1.0)
@@ -137,11 +143,13 @@ PLATFORMS
 
 DEPENDENCIES
   activemerchant
+  better_errors
   bootstrap-sass
   coffee-rails (~> 4.0.0)
   devise
   jbuilder (~> 2.0)
   jquery-rails
+  quiet_assets
   rails (= 4.1.0)
   sdoc (~> 0.4.0)
   spring

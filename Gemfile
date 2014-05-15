@@ -42,5 +42,9 @@ gem 'spring',        group: :development
 # gem 'debugger', group: [:development, :test]
 
 gem 'devise'
+group :development do
+  gem "better_errors"
+  gem 'quiet_assets'
+end
 
 # gem 'bootstrap-sass', '~> 3.1.1'
