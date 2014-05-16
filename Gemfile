@@ -43,6 +43,7 @@ gem 'spring',        group: :development
 
 gem 'devise'
 group :development do
+  gem "binding_of_caller" 
   gem "better_errors"
   gem 'quiet_assets'
 end

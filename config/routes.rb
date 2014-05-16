@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   
-  
+  get 'express_checkout', to: 'payments#express_checkout'
 
   devise_for :users
   devise_scope :user do
