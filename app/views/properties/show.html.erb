@@ -1,8 +1,13 @@
 <p id="notice"><%= notice %></p>
 
 <%= @property.address %>
-
+<br>
 <%= link_to ' Back to user properties listing', user_properties_path %>
+<br>
 <%=link_to 'User main page',user_path(@user)%>
+<br>
 <%=link_to(image_tag("https://www.paypal.com/en_US/i/btn/btn_xpressCheckout.gif"), express_checkout_path) %>
+<br>
+
+
 
