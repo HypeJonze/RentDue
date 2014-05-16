@@ -2,7 +2,7 @@ class Payment < ActiveRecord::Base
   belongs_to :property
 def purchase
     response = EXPRESS_GATEWAY.purchase(100, express_purchase_options)
-    payment.update_attribute(:purchased_at, Time.now) if response.success?
+    
     response.success?
 end
  def express_token=(token)
