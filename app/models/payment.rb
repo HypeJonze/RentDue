@@ -2,7 +2,6 @@ class Payment < ActiveRecord::Base
   belongs_to :property
 def purchase(amount)
     response = EXPRESS_GATEWAY.purchase(amount, express_purchase_options)
-   
     response.success?
 end
 
