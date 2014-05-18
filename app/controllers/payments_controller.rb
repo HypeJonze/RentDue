@@ -14,11 +14,11 @@ def express_checkout
 
   
 
-  response = EXPRESS_GATEWAY.setup_purchase( @@amount/100,
+  response = EXPRESS_GATEWAY.setup_purchase( @@amount,
     ip: request.remote_ip,
     return_url: express_check_url,
     cancel_return_url: root_url,
-    items: [{name: "Property payment", description: "Property description", quantity: "1", amount:  @@amount/100}]
+    items: [{name: "Property payment", description: "Property description", quantity: "1", amount:  @@amount}]
 
   )
   redirect_to EXPRESS_GATEWAY.redirect_url_for(response.token)
