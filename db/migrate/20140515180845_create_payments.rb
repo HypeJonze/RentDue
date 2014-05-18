@@ -4,8 +4,6 @@ class CreatePayments < ActiveRecord::Migration
       t.string :ip
       t.string :express_token
       t.string :express_payer_id
-      t.references :property, index: true
-
       t.timestamps
     end
   end

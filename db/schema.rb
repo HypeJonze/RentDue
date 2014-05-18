@@ -11,15 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140515180845) do
+ActiveRecord::Schema.define(version: 20140517224541) do
 
   create_table "payments", force: true do |t|
     t.string   "ip"
     t.string   "express_token"
     t.string   "express_payer_id"
-    t.integer  "property_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "property_id"
   end
 
   add_index "payments", ["property_id"], name: "index_payments_on_property_id"

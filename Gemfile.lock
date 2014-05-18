@@ -14,7 +14,7 @@ GEM
       activesupport (= 4.1.0)
       builder (~> 3.1)
       erubis (~> 2.7.0)
-    active_utils (2.1.1)
+    active_utils (2.2.0)
       activesupport (>= 2.3.11)
       i18n
     activemerchant (1.43.1)
@@ -107,7 +107,7 @@ GEM
       activesupport (= 4.1.0)
       rake (>= 0.8.7)
       thor (>= 0.18.1, < 2.0)
-    rake (10.3.1)
+    rake (10.3.2)
     rdoc (4.1.1)
       json (~> 1.4)
     sass (3.3.7)

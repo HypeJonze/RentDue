@@ -1,15 +1,17 @@
 Rails.application.routes.draw do
   
   get 'express_checkout', to: 'payments#express_checkout'
-
+  get 'express_check', to: 'payments#express_check'
   devise_for :users
   devise_scope :user do
     root to: "devise/sessions#new"
   end
 
-  resources :payments
+  
   resources :users do
-    resources :properties 
+    resources :properties do
+      resources :payments
+    end
   end 
 
 

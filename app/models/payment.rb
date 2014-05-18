@@ -1,10 +1,11 @@
 class Payment < ActiveRecord::Base
   belongs_to :property
-def purchase
-    response = EXPRESS_GATEWAY.purchase(100, express_purchase_options)
-    
+def purchase(amount)
+    response = EXPRESS_GATEWAY.purchase(amount, express_purchase_options)
+   
     response.success?
 end
+
  def express_token=(token)
     self[:express_token] = token
     if new_record? && !token.blank?

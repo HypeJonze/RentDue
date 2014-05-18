@@ -10,6 +10,7 @@ class ApplicationController < ActionController::Base
       user_path(resource)
   end
 
+
   protected
 
   def configure_devise_permitted_parameters
