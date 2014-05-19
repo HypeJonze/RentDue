@@ -1,31 +1,41 @@
-<h1>Listing properties</h1>
 
-<table>
+<div class ="panel panel-primary ">
+  <div class="panel-heading">List Properties</div>
+  <div class="panel-body">
+  <table class="table table-hover">
   <thead>
     <tr>
       <th colspan="3"></th>
-    </tr>
+      </tr>
   </thead>
   
 
-  <tbody>
+    
+    
     <% @properties.each do |property| %>
-      <tr>
+          
+
         <td><%=property.address %></td>
         <td><%=property.province%></td>
         <td><%=property.city%></td>
         <td><%=property.postcode %></td>
-        <td><%=property.rent%></td>
-        <td><%=property.utilies%></td>
-        <td><%=link_to "Show Property",user_property_path(@user,property) , class: "btn-default btn"%></td>
-        <td><%= link_to "Edit Property", edit_user_property_path(@user,property), class: "btn-default btn"%></td>
+        <td>$<%=property.rent%></td>
+        <td>$<%=property.utilies%></td>
+
+        <td><%=link_to "Show Property",user_property_path(@user,property) , class: "btn-default  btn-sm btn"%></td>
+        <td><%= link_to "Edit Property", edit_user_property_path(@user,property), class: "btn-default  btn-sm btn"%></td>
+        <td><%= link_to "Delete Property", user_property_path(@user,property), method: :delete, data: { confirm: 'Are you sure?' },class: "btn-danger  btn-sm btn"%></td>
+
         
        
       </tr>
 
     <% end %>
-    <td> <%=link_to 'User main page',user_path(@user ), class: "btn-default btn"%></td>
+  </div>
+    
+    
+  </div>
   </tbody>
 </table>
-
-<br>
+<%= link_to 'Add Properties',new_user_property_path(@user), class: "btn-default btn"%>
+<td> <%=link_to 'User main page',user_path(@user ), class: "btn-default btn"%></td>
