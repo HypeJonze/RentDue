@@ -3,11 +3,11 @@
 <%= @property.address %>
 
 <br>
-<%= link_to ' Back to user properties listing', user_properties_path %>
+<%= link_to ' Back to user properties listing', user_properties_path , class: "btn-default btn"%>
 <br>
-<%=link_to 'User main page',user_path(@user)%>
+<%=link_to 'User main page',user_path(@user), class: "btn-default btn"%>
 <br>
-<%=link_to 'Pay ',new_user_property_payment_path(@user,@property)%>
+<%=link_to 'Pay ',new_user_property_payment_path(@user,@property), class: "btn-default btn"%>
 
 <br>
 

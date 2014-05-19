@@ -5,10 +5,9 @@
 <br />
 <%=@user.email%>
 <br />
+<%= link_to 'Add Properties',new_user_property_path(@user), class: "btn-default btn"%>
+<%= link_to 'List Properties',user_properties_path(@user), class: "btn-default btn"%>
 
-<%= link_to 'Add Properties',new_user_property_path(@user)%>
-<%= link_to 'List Properties',user_properties_path(@user)%>
-<%= link_to 'Back', users_path %>
 
 
 

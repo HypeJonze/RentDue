@@ -17,14 +17,14 @@
         <td><%=property.postcode %></td>
         <td><%=property.rent%></td>
         <td><%=property.utilies%></td>
-        <td><%=link_to "Show Property",user_property_path(@user,property)%></td>
-        <td><%= link_to "Edit Property", edit_user_property_path(@user,property)%></td>
+        <td><%=link_to "Show Property",user_property_path(@user,property) , class: "btn-default btn"%></td>
+        <td><%= link_to "Edit Property", edit_user_property_path(@user,property), class: "btn-default btn"%></td>
         
        
       </tr>
 
     <% end %>
-    <td> <%=link_to 'User main page',user_path(@user)%></td>
+    <td> <%=link_to 'User main page',user_path(@user ), class: "btn-default btn"%></td>
   </tbody>
 </table>
 
