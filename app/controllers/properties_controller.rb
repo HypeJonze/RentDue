@@ -19,6 +19,7 @@ class PropertiesController < ApplicationController
 def new
     @user =User.find(params[:user_id])
     @property = @user.properties.new
+
 end
 
   
@@ -32,9 +33,10 @@ end
   def create
     @user =User.find(params[:user_id])
     @property = @user.properties.new(property_params)
-
+ 
     respond_to do |format|
        if @property.save
+        fails
          format.html { redirect_to user_properties_path, notice: 'Property was successfully created.' }
           format.json { render :show, status: :created, location: @property }
       else
@@ -47,6 +49,8 @@ end
   def update
     respond_to do |format|
       if @property.update(property_params)
+        
+        @property.save
         format.html { redirect_to user_properties_path, notice: 'Property was successfully updated.' }
         format.json { render :show, status: :ok, location: @property }
       else

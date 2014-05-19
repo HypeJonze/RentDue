@@ -20,7 +20,8 @@
         <td><%=property.city%></td>
         <td><%=property.postcode %></td>
         <td>$<%=property.rent%></td>
-        <td>$<%=property.utilies%></td>
+        <td><%=property.utilies%></td>
+        <td><%= property.due_date%></td>
 
         <td><%=link_to "Show Property",user_property_path(@user,property) , class: "btn-default  btn-sm btn"%></td>
         <td><%= link_to "Edit Property", edit_user_property_path(@user,property), class: "btn-default  btn-sm btn"%></td>

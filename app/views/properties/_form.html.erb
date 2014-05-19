@@ -27,10 +27,9 @@
     <div><%=f.label :Rent %><br/>
     <%=f.number_field :rent,class:"form-control" %>
   </div>
-    <div><%=f.label :Utilies %><br/>
-    <%=f.number_field :utilies ,class:"form-control"%>
+    <div><%=f.label :DueDate%><br/>
+    <%=f.date_field :utilies ,class:"form-control"%>
   </div>
-
 <br>
 <%= button_tag(type: 'submit', class: "btn btn-primary center-block") do %>
  <i class="glyphicon glyphicon-ok"></i> Save
