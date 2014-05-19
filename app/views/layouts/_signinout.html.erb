@@ -1,10 +1,10 @@
-<ul class="nav pull-right">
-                <% if user_signed_in? %>
+                    <% if user_signed_in? %>
                     <li><%= link_to current_user.email, edit_user_registration_path %></li>
                     <li><%= link_to "Sign Out", destroy_user_session_path, :method => :delete %></li>
+                    <li><%=link_to "Home",root_path%>
+                      <li class ="Dropdown"><%=link_to "Properties",user_properties_path(@user)%></li>
                       
                     <% else %>
                     <li><%= link_to "Sign In", new_user_session_path %></li>
                     <li><%= link_to "Sign Up", new_user_registration_path %></li>
                     <% end %>
-</ul>

@@ -6,29 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%= content_for?(:title) ? yield(:title) : "Rentdue" %></title>
     <%= csrf_meta_tags %>
-    <%= render "layouts/shims" %>
+   
     <%= stylesheet_link_tag "application", :media => "all" %>
     <%= javascript_include_tag "application" %>
+
+
   </head>
-  <body>
   
-<header class="navbar navbar-fixed-top navbar-inverse">
-    <div class="navbar-inner">
-        <div class="container">
-          <%= link_to "Rent Due", '#', id: "logo" %>
-          <%= render "layouts/signinout" %>
-        </div>
-    </div>
-</header>
-    <div class="container">
-          <%= yield %>
-      </div>
-          
-      <footer>
-        <p>&copy; Company 2014</p>
-      </footer>
-
-    </div> 
-
-  </body>
+  <body>
+  <div class ="cover">
+  <div id ="wrap">
+   <%= render "layouts/navbar" %>
+  <div class ="container">
+    <div class="row">
+          <div class ="span12"><%= yield %></div>
+     </div>
+    
+    <%= render "layouts/footer" %>
+      
+    </body>
+     </div>
 </html>
