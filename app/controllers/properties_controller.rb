@@ -36,7 +36,7 @@ end
  
     respond_to do |format|
        if @property.save
-        fails
+        
          format.html { redirect_to user_properties_path, notice: 'Property was successfully created.' }
           format.json { render :show, status: :created, location: @property }
       else
