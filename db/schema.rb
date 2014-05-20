@@ -11,7 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140509070745) do
+ActiveRecord::Schema.define(version: 20140519231821) do
+
+  create_table "payments", force: true do |t|
+    t.string   "ip"
+    t.string   "express_token"
+    t.string   "express_payer_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "property_id"
+  end
+
+  add_index "payments", ["property_id"], name: "index_payments_on_property_id"
 
   create_table "properties", force: true do |t|
     t.string   "address"
@@ -19,10 +30,11 @@ ActiveRecord::Schema.define(version: 20140509070745) do
     t.string   "city"
     t.string   "postcode"
     t.integer  "rent"
-    t.integer  "utilies"
+    t.date     "utilies"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"
+    t.date     "due_date"
   end
 
   add_index "properties", ["user_id"], name: "index_properties_on_user_id"
@@ -32,16 +44,17 @@ ActiveRecord::Schema.define(version: 20140509070745) do
     t.string   "last_name"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
+    t.string   "email",                  default: "",    null: false
+    t.string   "encrypted_password",     default: "",    null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
+    t.integer  "sign_in_count",          default: 0,     null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
+    t.boolean  "admin",                  default: false
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

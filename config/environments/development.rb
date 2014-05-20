@@ -1,4 +1,16 @@
 Rails.application.configure do
+#PAYPAL SETUP FOR ACTIVE MERCHANT
+ config.after_initialize do
+      ActiveMerchant::Billing::Base.mode = :test
+        paypal_options = {
+          login: "seller_rentdue_api1.example.com",
+          password: "1400166234",
+          signature: "AGTjsyJXiNnoiX-AgGAzNyjrDCh2ADdqxMF8I..MrScjizKHH2YroyE."
+        }
+        ::EXPRESS_GATEWAY = ActiveMerchant::Billing::PaypalExpressGateway.new(paypal_options)
+      end
+
+  
   # Settings specified here will take precedence over those in config/application.rb.
 
   # In the development environment your application's code is reloaded on
@@ -37,4 +49,6 @@ Rails.application.configure do
 
 
   config.action_mailer.default_url_options = { host: 'localhost:3000' }
+  
+
 end

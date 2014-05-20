@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   before_filter :authenticate_user!
   before_action :set_user, only: [:show, :edit, :update, :destroy]
-  before_action :require_correct_user, only: [:show]
+  before_action :require_correct_user, only: [:show,:edit,:update,:destroy]
 
   # GET /users
   # GET /users.json
@@ -12,6 +12,7 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
+    #@user =User.find(params[:user_id])
   end
 
   # GET /users/new
@@ -64,17 +65,18 @@ class UsersController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
+    #Use callbacks to share common setup or constraints between actions.
     def set_user
       @user = User.find(params[:id])
 
     end
-     def require_correct_user
-        @user  = User.find(params[:id])
+    def require_correct_user
+       @user = User.find(params[:id])
         unless current_user == @user
           redirect_to root_url
         end
-     end
+      end
+    
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
       params[:user]

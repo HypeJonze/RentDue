@@ -12,6 +12,11 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require twitter/bootstrap
+
+//= require bootstrap
+
+//= require bootstrap.min
+
 //= require turbolinks
 //= require_tree .
+//= require fullcalendar

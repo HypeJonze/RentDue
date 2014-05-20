@@ -6,7 +6,8 @@ class CreateProperties < ActiveRecord::Migration
       t.string :city
       t.string :postcode
       t.integer :rent
-      t.integer :utilies
+      t.date :utilies
+      t.date :due_date
       t.timestamps
     end
   end

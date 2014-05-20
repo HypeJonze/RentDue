@@ -1,4 +1,17 @@
 <p id="notice"><%= notice %></p>
 
-<%= link_to 'Edit', edit_property_path(@property) %> |
-<%= link_to 'Back', properties_path %>
+<p><%= @property.address %></p>
+<p>$<%=@property.rent%></p>
+<br>
+
+<%=link_to 'PAY',new_user_property_payment_path(@user,@property), class: "btn btn-default btn-lg glyphicon glyphicon-usd"%>
+
+<br>
+<br>
+<%=link_to 'User main page',user_path(@user), class: "btn-default btn-sm btn glyphicon glyphicon-home"%>
+<%= link_to ' Back to user listing', user_properties_path , class: "btn-default btn-sm btn glyphicon glyphicon-circle-arrow-left"%>
+<br>
+
+
+
+
