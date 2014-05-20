@@ -21,7 +21,7 @@
         <td><%=property.postcode %></td>
         <td>$<%=property.rent%></td>
         <td><%=property.utilies%></td>
-        <td><%= property.due_date%></td>
+       
 
         <td><%=link_to "Show Property",user_property_path(@user,property) , class: "btn-default  btn-sm btn"%></td>
         <td><%= link_to "Edit Property", edit_user_property_path(@user,property), class: "btn-default  btn-sm btn"%></td>
@@ -40,3 +40,4 @@
 </table>
 <%= link_to 'Add Properties',new_user_property_path(@user), class: "btn-default btn"%>
 <td> <%=link_to 'User main page',user_path(@user ), class: "btn-default btn"%></td>
+<div id="calendar">Calendar</div>
