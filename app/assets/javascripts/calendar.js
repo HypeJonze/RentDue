@@ -1,8 +1,13 @@
 $(document).ready(function (){
   console.log("ayhan");
   $('#calendar').fullCalendar({
-    contentHeight: 250,
+    contentHeight: 200,
      windowResize:true,
+     header: {
+            left: 'prev, next today',
+            center: 'title',
+            right: 'month, basicWeek, basicDay'
+        },
 
        editable: true,
        defaultView: 'month',
